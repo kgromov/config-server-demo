@@ -1,0 +1,19 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: person-service
+  config:
+    import: vault://
+  cloud:
+    config:
+      uri: http://localhost:8888
+    vault:
+      host: localhost
+      port: 8200
+      scheme: http
+      authentication: token
+      token: hvs.VAbKI8zuHjrYFLLGIkQuhGaS
+      application-name: ${spring.application.name}
+      fail-fast: true

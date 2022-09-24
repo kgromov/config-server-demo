@@ -10,6 +10,6 @@ spring:
         git:
           uri: https://github.com/kgromov/config-demo-repo.git
           clone-on-start: true
-          default-label: master
+          default-label: vault-local-config
       discovery:
         enabled: false
