@@ -31,8 +31,8 @@ class AccountController {
         return new CreditCard(new Faker().business());
     }
 
-    @GetMapping("/accounts/{accountNumber}/private")
-    public CreditCardPrivateInfo getCreditCardPrivateInfo(@PathVariable String accountNumber) {
+    @GetMapping("/configuration")
+    public CreditCardPrivateInfo getCreditCardConfiguration() {
         return creditCardPrivateInfo;
     }
 }
