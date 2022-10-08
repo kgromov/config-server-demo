@@ -4,6 +4,10 @@ server:
 spring:
   application:
     name: config-server
+  profiles:
+    active:
+      - git
+      - vault
   cloud:
     config:
       server:
@@ -11,5 +15,20 @@ spring:
           uri: https://github.com/kgromov/config-demo-repo.git
           clone-on-start: true
           default-label: vault-local-config
+          order: 2
+        vault:
+          host: localhost
+          port: 8200
+          scheme: http
+          authentication: token
+          token: hvs.VAbKI8zuHjrYFLLGIkQuhGaS
+          default-key:
+          order: 1
       discovery:
         enabled: false
+
+
+
+logging:
+  level:
+    org.springframework.cloud: trace
