@@ -1,0 +1,14 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: account-service
+  cloud:
+    config:
+#      uri: http://localhost:8888
+      # alternative way to get configuration from config-server - through service discovery.
+      # server port can be moved to config server as well
+      discovery:
+        enabled: true
+        service-id: config-server
